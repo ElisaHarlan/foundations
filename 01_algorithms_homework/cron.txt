@@ -1,0 +1,77 @@
+Last login: Wed Jul 26 15:58:34 on ttys005
+Elisa-Harlans-MacBook-Pro:~ Elisa$ cd Desktop/
+Elisa-Harlans-MacBook-Pro:Desktop Elisa$ cd Lede_Program/
+Elisa-Harlans-MacBook-Pro:Lede_Program Elisa$ cd 5_Algorithms/
+Elisa-Harlans-MacBook-Pro:5_Algorithms Elisa$ cd 02_Session/
+Elisa-Harlans-MacBook-Pro:02_Session Elisa$ ls
+Algorithms_Homework.ipynb	Notes
+Algorithms_Homework.py		cron.txt
+Algorithms_Homework_2.ipynb	diffing
+BBC_Data.csv			headline.txt
+BBC_Dataframe.csv		import requests.py
+Digital Ocean - Server		scraper.py
+NYT txt
+Elisa-Harlans-MacBook-Pro:02_Session Elisa$ scp -i ~/.ssh/algorithms_key headline.txt root@165.227.158.77:~/
+headline.txt                                  100%   58     0.6KB/s   00:00    
+Elisa-Harlans-MacBook-Pro:02_Session Elisa$ ssh -i ~/.ssh/algorithms_key root@165.227.158.77
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-87-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+7 packages can be updated.
+0 updates are security updates.
+
+
+You have mail.
+Last login: Wed Jul 26 19:58:37 2017 from 160.39.212.116
+server root@algorithms:~$ ls
+Algorithms_Homework.ipynb     google-chrome-stable_current_amd64.deb
+Algorithms_Homework.py	      headline.txt
+BBC_Data2017-07-25-08-00.csv  mbox
+BBC_Data2017-07-25-12-00.csv  nano.save
+BBC_Data2017-07-25-16-00.csv  openrefine-2.7
+BBC_Data2017-07-26-08-00.csv  openrefine-linux-2.7.tar.gz
+BBC_Data2017-07-26-12-00.csv  scraper.py
+chromedriver_linux64.zip
+server root@algorithms:~$ crontab -e
+crontab: installing new crontab
+server root@algorithms:~$ ls
+Algorithms_Homework_2.py      chromedriver_linux64.zip
+Algorithms_Homework.ipynb     google-chrome-stable_current_amd64.deb
+Algorithms_Homework.py	      headline.txt
+BBC_Data2017-07-25-08-00.csv  mbox
+BBC_Data2017-07-25-12-00.csv  nano.save
+BBC_Data2017-07-25-16-00.csv  openrefine-2.7
+BBC_Data2017-07-26-08-00.csv  openrefine-linux-2.7.tar.gz
+BBC_Data2017-07-26-12-00.csv  scraper.py
+server root@algorithms:~$ crontab -l
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+0 8,12,16 * * * python3 ~/Algorithms_Homework.py
+0,30 * * * 1,2,3,4,5 python3 ~/Algorithms_Homework_2.py  
+server root@algorithms:~$ 
